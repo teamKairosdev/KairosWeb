@@ -1,17 +1,173 @@
 ---
-
+const siteUrl = 'https://kairos.com';
+const title = 'Kairos — the opportune moment';
+const description = 'Kairos is an ancient Greek word meaning the right, critical, or opportune moment. A space for design, technology, and the moments that matter.';
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={siteUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={siteUrl} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kairos",
+    "description": "The opportune moment.",
+    "url": "https://kairos.com"
+  }
+  </script>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--font-sans:'Geist',system-ui,sans-serif;--color-bg-dark:#000;--color-bg-light:#fff;--color-text-dark:#fff;--color-text-light:#000;--color-secondary:#666;--duration-fade:1.2s;--duration-zoom:1s}
+    html{scroll-behavior:smooth;background:#000}
+    body{font-family:var(--font-sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}
+    .skip-link{position:absolute;top:-100%;left:0;z-index:100;padding:8px 16px;background:#000;color:#fff;text-decoration:none;font-size:14px}
+    .skip-link:focus{top:0;outline:2px solid #fff;outline-offset:2px}
+    .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:24px 48px;color:#fff;mix-blend-mode:difference;pointer-events:none}
+    .header nav{display:flex;justify-content:flex-end;gap:32px;pointer-events:auto}
+    .header a{color:inherit;text-decoration:none;font-size:14px;font-weight:400;letter-spacing:0.05em}
+    .header a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+    .section{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative}
+    .section.light{background:var(--color-bg-light);color:var(--color-text-light)}
+    .section.dark{background:var(--color-bg-dark);color:var(--color-text-dark)}
+    .hero{flex-direction:column;text-align:center;will-change:transform}
+    .hero-title{font-size:clamp(4rem,15vw,12rem);font-weight:600;line-height:0.9;letter-spacing:-0.03em;will-change:transform,opacity}
+    .hero-subtitle{margin-top:24px;font-size:clamp(1rem,2vw,1.5rem);font-weight:300;letter-spacing:0.2em;text-transform:uppercase;opacity:0.7;will-change:opacity}
+    .section-body{max-width:640px;padding:48px 24px;text-align:center}
+    .section-num{display:block;font-size:clamp(3rem,8vw,6rem);font-weight:600;line-height:1;letter-spacing:-0.03em;margin-bottom:24px;opacity:0.3}
+    .section-text{font-size:clamp(1.125rem,2vw,1.5rem);font-weight:300;line-height:1.8;letter-spacing:0.01em}
+    .footer{padding:24px 48px;background:#000;color:#666;font-size:12px;text-align:center}
+    .fade-up{opacity:0;transform:translateY(40px);transition:opacity var(--duration-fade) ease,transform var(--duration-fade) ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (prefers-reduced-motion:reduce){
+      .fade-up{opacity:1;transform:none;transition:none}
+      .fade-up.visible{opacity:1;transform:none}
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header" role="banner">
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section hero dark" aria-label="Hero">
+      <h1 class="hero-title">KAIROS</h1>
+      <p class="hero-subtitle">The opportune moment.</p>
+    </section>
+
+    <section id="about" class="section light fade-up" aria-labelledby="about-heading">
+      <div class="section-body">
+        <span class="section-num" aria-hidden="true">01</span>
+        <h2 id="about-heading" class="visually-hidden">About</h2>
+        <p class="section-text">Kairos is an ancient Greek word meaning the right, critical, or opportune moment. Unlike chronos — chronological or sequential time — kairos is qualitative, a juncture where everything aligns.</p>
+      </div>
+    </section>
+
+    <section id="philosophy" class="section dark fade-up" aria-labelledby="philosophy-heading">
+      <div class="section-body">
+        <span class="section-num" aria-hidden="true">02</span>
+        <h2 id="philosophy-heading" class="visually-hidden">Philosophy</h2>
+        <p class="section-text">The ancient Greeks distinguished chronos, linear measurable time, from kairos, the opportune moment. Kairos is the moment of action, the instant of decision, the right time to act.</p>
+      </div>
+    </section>
+
+    <section id="work" class="section light fade-up" aria-labelledby="work-heading">
+      <div class="section-body">
+        <span class="section-num" aria-hidden="true">03</span>
+        <h2 id="work-heading" class="visually-hidden">Work</h2>
+        <p class="section-text">We work at the intersection of design, technology, and strategy. Every engagement is approached as a kairotic moment — a singular opportunity to create something meaningful.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section dark fade-up" aria-labelledby="contact-heading">
+      <div class="section-body">
+        <span class="section-num" aria-hidden="true">04</span>
+        <h2 id="contact-heading" class="visually-hidden">Contact</h2>
+        <p class="section-text">hello@kairos.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>&copy; Kairos</p>
+  </footer>
+
+  <script>
+    (function() {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var fadeEls = document.querySelectorAll('.fade-up');
+      if (!reduceMotion) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(function(el) { observer.observe(el); });
+      } else {
+        fadeEls.forEach(function(el) { el.classList.add('visible'); });
+      }
+
+      if (!reduceMotion) {
+        var hero = document.querySelector('.hero');
+        var heroTitle = document.querySelector('.hero-title');
+        var heroSubtitle = document.querySelector('.hero-subtitle');
+        var ticking = false;
+
+        function updateHero() {
+          var scrollY = window.scrollY;
+          var vh = window.innerHeight;
+
+          if (scrollY <= vh) {
+            var progress = scrollY / vh;
+            var scale = 1 + progress * 0.08;
+            var opacity = Math.max(0, 1 - progress * 1.5);
+
+            heroTitle.style.transform = 'scale(' + scale + ')';
+            heroTitle.style.opacity = opacity;
+            heroSubtitle.style.opacity = Math.max(0, 0.7 - progress * 1.2);
+          }
+          ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            window.requestAnimationFrame(updateHero);
+            ticking = true;
+          }
+        }, { passive: true });
+      }
+    })();
+  </script>
+</body>
 </html>
