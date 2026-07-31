@@ -191,10 +191,11 @@ const faqs = [
       .products-intro .section-copy { max-width: 420px; margin: 0; }
       .product-layout { display: grid; grid-template-columns: 126px minmax(0, 1fr); gap: 62px; }
       .product-nav { position: sticky; top: 104px; align-self: start; display: flex; flex-direction: column; gap: 22px; }
-      .product-nav a { position: relative; width: fit-content; color: #8d8d8d; font-size: 16px; font-weight: 800; letter-spacing: -0.05em; transition: color .2s ease; }
+      .product-nav a { position: relative; width: fit-content; color: #8d8d8d; font-size: 16px; font-weight: 800; letter-spacing: -0.05em; transform-origin: left center; transition: color .25s ease, transform .25s ease; }
       .product-nav a::before { position: absolute; top: 50%; left: -16px; width: 0; height: 2px; background: var(--ink); content: ""; transition: width .2s ease; }
-      .product-nav a:hover, .product-nav a:focus-visible { color: var(--ink); }
-      .product-nav a:hover::before, .product-nav a:focus-visible::before { width: 10px; }
+      .product-nav a:hover, .product-nav a:focus-visible, .product-nav a.is-active { color: var(--ink); }
+      .product-nav a:hover::before, .product-nav a:focus-visible::before, .product-nav a.is-active::before { width: 10px; }
+      .product-nav a.is-active { transform: scale(1.14); }
       .product-list { display: flex; flex-direction: column; gap: 84px; }
       .product-card { scroll-margin-top: 110px; }
       .product-visual { position: relative; min-height: 420px; overflow: hidden; border-radius: 16px; background: var(--card-color); }
@@ -478,6 +479,45 @@ const faqs = [
         tabButtons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
         tabPanels.forEach((panel) => panel.classList.toggle('active', panel.getAttribute('data-panel') === id));
       }));
+
+      const productAnchors = [...document.querySelectorAll('.product-nav a')];
+      const productCards = [...document.querySelectorAll('.product-card')];
+      let productNavFrame = 0;
+
+      function updateProductNav() {
+        productNavFrame = 0;
+        if (!productAnchors.length || !productCards.length) return;
+
+        const focusY = window.innerHeight * 0.48;
+        let activeIndex = 0;
+        let closestDistance = Number.POSITIVE_INFINITY;
+
+        productCards.forEach((card, index) => {
+          const rect = card.getBoundingClientRect();
+          const distance = rect.top <= focusY && rect.bottom >= focusY
+            ? 0
+            : Math.min(Math.abs(rect.top - focusY), Math.abs(rect.bottom - focusY));
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            activeIndex = index;
+          }
+        });
+
+        productAnchors.forEach((anchor, index) => {
+          const isActive = index === activeIndex;
+          anchor.classList.toggle('is-active', isActive);
+          if (isActive) anchor.setAttribute('aria-current', 'true');
+          else anchor.removeAttribute('aria-current');
+        });
+      }
+
+      function requestProductNavUpdate() {
+        if (!productNavFrame) productNavFrame = window.requestAnimationFrame(updateProductNav);
+      }
+
+      window.addEventListener('scroll', requestProductNavUpdate, { passive: true });
+      window.addEventListener('resize', requestProductNavUpdate);
+      updateProductNav();
     </script>
   </body>
 </html>
