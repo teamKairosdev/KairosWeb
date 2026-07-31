@@ -1,0 +1,56 @@
+---
+const title = '공사중입니다 | Blumn AI';
+const description = '더 나은 서비스를 준비하고 있습니다.';
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        color: #000;
+        background: #fff;
+        font-family: Pretendard, "Noto Sans KR", Inter, system-ui, sans-serif;
+        font-synthesis: none;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { min-height: 100%; }
+      body { margin: 0; background: #fff; -webkit-font-smoothing: antialiased; }
+      main { display: grid; min-height: 100svh; place-items: center; padding: 32px; }
+      .maintenance { width: min(100%, 720px); text-align: center; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(52px, 10vw, 108px); font-size: 18px; font-weight: 900; letter-spacing: -0.08em; }
+      .brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; background: #000; color: #fff; font-size: 13px; letter-spacing: -0.08em; }
+      .eyebrow { margin: 0 0 22px; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+      h1 { margin: 0; font-size: clamp(48px, 10vw, 108px); font-weight: 900; line-height: .98; letter-spacing: -0.09em; }
+      .message { margin: 28px auto 0; color: #555; font-size: clamp(16px, 2vw, 20px); font-weight: 500; line-height: 1.6; letter-spacing: -0.05em; }
+      .line { width: 56px; height: 4px; margin: 38px auto 0; background: #000; }
+      .footer { margin-top: clamp(90px, 14vw, 150px); color: #888; font-size: 12px; letter-spacing: .02em; }
+
+      @media (max-width: 480px) {
+        main { padding: 24px; }
+        .brand { margin-bottom: 72px; }
+        h1 { font-size: clamp(44px, 14vw, 68px); }
+        .message { margin-top: 22px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="maintenance" aria-labelledby="maintenance-title">
+        <div class="brand" aria-label="Blumn AI"><span class="brand-mark">B·</span><span>BLUMN AI</span></div>
+        <p class="eyebrow">WE ARE REBUILDING</p>
+        <h1 id="maintenance-title">공사중입니다.</h1>
+        <p class="message">더 나은 서비스를 준비하고 있습니다.<br />잠시 후 다시 방문해 주세요.</p>
+        <div class="line" aria-hidden="true"></div>
+        <p class="footer">© Blumn AI. All rights reserved.</p>
+      </section>
+    </main>
+  </body>
+</html>
