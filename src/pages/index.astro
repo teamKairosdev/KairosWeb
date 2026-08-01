@@ -1,7 +1,7 @@
 ---
 const siteUrl = 'https://kairos.com';
-const title = '블룸에이아이 | AI 고객 커뮤니케이션 플랫폼';
-const description = '채팅상담, 전화상담, CRM과 마케팅 자동화를 하나의 AI 플랫폼으로 연결합니다.';
+const title = 'Kairos | The opportune moment';
+const description = 'Kairos는 디자인, 기술, 전략이 만나는 중요한 순간을 만듭니다.';
 
 const tabs = [
   {
@@ -93,12 +93,15 @@ const faqs = [
     <style>
       :root {
         --yellow: #fff000;
-        --ink: #171717;
-        --surface: #f5f5f3;
+        --light-blue: #0D50E5;
+        --medium-blue: #00007E;
+        --dark-blue: #00005A;
+        --ink: var(--dark-blue);
+        --surface: #f5f8ff;
         --muted: #777;
-        --line: rgba(23, 23, 23, 0.12);
+        --line: rgba(0, 0, 90, 0.14);
         --max: 1320px;
-        --shadow: 0 20px 60px rgba(23, 23, 23, 0.1);
+        --shadow: 0 20px 60px rgba(0, 0, 90, 0.12);
         font-family: Pretendard, "Noto Sans KR", Inter, system-ui, sans-serif;
         color: var(--ink);
         background: var(--surface);
@@ -118,47 +121,47 @@ const faqs = [
       .section-copy { color: #484848; font-size: 18px; line-height: 1.6; letter-spacing: -0.03em; }
 
       .site-header { position: fixed; top: 8px; left: 50%; z-index: 50; width: min(1080px, calc(100% - 16px)); transform: translateX(-50%); pointer-events: none; }
-      .site-nav { display: flex; height: 56px; align-items: center; gap: 20px; padding: 10px 12px; border-radius: 10px; background: rgba(255, 240, 0, 0.9); box-shadow: 0 8px 24px rgba(0,0,0,.08); backdrop-filter: blur(10px); pointer-events: auto; }
+      .site-nav { display: flex; height: 56px; align-items: center; gap: 20px; padding: 10px 12px; border-radius: 10px; background: rgba(13, 80, 229, 0.94); color: #fff; box-shadow: 0 8px 24px rgba(0,0,90,.16); backdrop-filter: blur(10px); pointer-events: auto; }
       .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 7px; font-size: 18px; font-weight: 900; letter-spacing: -0.08em; }
-      .brand-mark { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; background: var(--ink); color: var(--yellow); font-size: 12px; letter-spacing: -0.08em; }
+      .brand-mark { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; background: var(--dark-blue); color: #fff; font-size: 12px; letter-spacing: -0.08em; }
       .nav-links { display: flex; flex: 1; justify-content: center; gap: clamp(14px, 2.3vw, 32px); }
       .nav-links a { position: relative; font-size: 14px; font-weight: 700; letter-spacing: -0.04em; }
-      .nav-links a::after { position: absolute; bottom: -7px; left: 0; width: 0; height: 2px; border-radius: 2px; background: var(--ink); content: ""; transition: width .2s ease; }
+      .nav-links a::after { position: absolute; bottom: -7px; left: 0; width: 0; height: 2px; border-radius: 2px; background: #fff; content: ""; transition: width .2s ease; }
       .nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
       .nav-cta, .button-dark { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 0 14px; border-radius: 9px; background: var(--ink); color: white; font-size: 14px; font-weight: 700; letter-spacing: -0.04em; transition: transform .2s ease, background .2s ease; }
       .nav-cta:hover, .button-dark:hover { background: #343434; transform: translateY(-2px); }
       .menu-button { display: none; margin-left: auto; border: 0; background: transparent; font-size: 22px; line-height: 1; cursor: pointer; }
 
-      .hero { position: relative; min-height: 100svh; overflow: hidden; background: var(--yellow); }
-      .hero::before { position: absolute; inset: 0; background: radial-gradient(circle at 83% 22%, rgba(255,255,255,.55), transparent 24%), linear-gradient(115deg, transparent 45%, rgba(255,255,255,.18) 45%, transparent 70%); content: ""; }
+      .hero { position: relative; min-height: 100svh; overflow: hidden; background: var(--light-blue); color: #fff; }
+      .hero::before { position: absolute; inset: 0; background: radial-gradient(circle at 83% 22%, rgba(255,255,255,.32), transparent 24%), linear-gradient(115deg, transparent 45%, rgba(255,255,255,.14) 45%, transparent 70%); content: ""; }
       .hero-grid { position: relative; z-index: 1; display: grid; min-height: 100svh; grid-template-columns: minmax(0, 1fr) minmax(420px, .92fr); align-items: center; gap: 40px; padding: 136px 0 88px; }
       .hero-copy { max-width: 720px; }
       .hero-title { max-width: 760px; margin: 0; font-size: clamp(58px, 8.4vw, 126px); font-weight: 850; line-height: .94; letter-spacing: -0.075em; }
-      .hero-title em { color: white; font-style: normal; text-shadow: 4px 4px 0 var(--ink); }
+      .hero-title em { color: #fff; font-style: normal; text-shadow: 4px 4px 0 var(--dark-blue); }
       .hero-subtitle { max-width: 510px; margin: 32px 0 0; font-size: clamp(18px, 2vw, 26px); font-weight: 600; line-height: 1.45; letter-spacing: -0.055em; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
-      .button-yellow { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--ink); border-radius: 10px; background: white; font-size: 16px; font-weight: 800; letter-spacing: -0.04em; transition: transform .2s ease, box-shadow .2s ease; }
+      .button-yellow { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid #fff; border-radius: 10px; background: #fff; color: var(--dark-blue); font-size: 16px; font-weight: 800; letter-spacing: -0.04em; transition: transform .2s ease, box-shadow .2s ease; }
       .button-yellow:hover { box-shadow: 4px 4px 0 var(--ink); transform: translate(-2px, -2px); }
       .hero-note { display: flex; align-items: center; gap: 8px; margin-top: 60px; font-size: 13px; font-weight: 700; }
-      .hero-note::before { width: 7px; height: 7px; border-radius: 50%; background: #00a979; box-shadow: 0 0 0 5px rgba(0, 169, 121, .15); content: ""; }
+      .hero-note::before { width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px rgba(255, 255, 255, .2); content: ""; }
       .hero-art { position: relative; min-height: 520px; }
       .hero-glow { position: absolute; top: 50%; left: 50%; width: 520px; height: 520px; border-radius: 50%; background: rgba(255,255,255,.48); filter: blur(6px); transform: translate(-50%, -50%); }
       .orbit { position: absolute; top: 50%; left: 50%; width: 470px; height: 470px; border: 1px solid rgba(23,23,23,.18); border-radius: 50%; transform: translate(-50%, -50%) rotate(-22deg); }
       .orbit::before, .orbit::after { position: absolute; width: 13px; height: 13px; border-radius: 50%; background: var(--ink); content: ""; }
       .orbit::before { top: 12%; left: 7%; }
-      .orbit::after { right: 4%; bottom: 18%; background: #ff4245; }
+      .orbit::after { right: 4%; bottom: 18%; background: var(--dark-blue); }
       .ai-window { position: absolute; top: 50%; left: 50%; width: min(420px, 88%); overflow: hidden; border: 2px solid var(--ink); border-radius: 22px; background: rgba(255,255,255,.84); box-shadow: 12px 18px 0 rgba(23,23,23,.13); transform: translate(-50%, -50%) rotate(4deg); }
       .window-top { display: flex; align-items: center; gap: 7px; padding: 16px 18px; border-bottom: 1px solid rgba(23,23,23,.14); background: white; }
       .window-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink); }
       .window-title { margin-left: auto; font-size: 13px; font-weight: 800; }
       .chat-body { display: flex; flex-direction: column; gap: 14px; padding: 28px 22px 24px; }
-      .chat-label { width: fit-content; padding: 6px 10px; border-radius: 7px; background: var(--yellow); font-size: 12px; font-weight: 800; }
+      .chat-label { width: fit-content; padding: 6px 10px; border-radius: 7px; background: var(--light-blue); color: #fff; font-size: 12px; font-weight: 800; }
       .chat-message { max-width: 80%; padding: 12px 14px; border-radius: 14px 14px 14px 3px; background: #f0f0f0; font-size: 15px; font-weight: 600; line-height: 1.4; letter-spacing: -0.04em; }
       .chat-message.user { align-self: flex-end; border-radius: 14px 14px 3px 14px; background: var(--ink); color: white; }
       .chat-input { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding: 10px 12px; border: 1px solid rgba(23,23,23,.14); border-radius: 10px; color: #a1a1a1; font-size: 12px; }
-      .send-icon { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 7px; background: var(--yellow); color: var(--ink); font-weight: 900; }
+      .send-icon { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 7px; background: var(--light-blue); color: #fff; font-weight: 900; }
       .float-card { position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid rgba(23,23,23,.16); border-radius: 14px; background: rgba(255,255,255,.78); box-shadow: 0 14px 24px rgba(23,23,23,.1); backdrop-filter: blur(8px); font-size: 13px; font-weight: 800; letter-spacing: -0.04em; }
-      .float-card span { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: var(--ink); color: var(--yellow); font-size: 12px; }
+      .float-card span { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: var(--dark-blue); color: #fff; font-size: 12px; }
       .float-card.one { top: 20%; left: 0; transform: rotate(-8deg); }
       .float-card.two { right: 0; bottom: 23%; transform: rotate(8deg); }
       .scroll-cue { position: absolute; bottom: 25px; left: 50%; display: flex; align-items: center; gap: 10px; color: var(--ink); font-size: 12px; font-weight: 800; letter-spacing: .05em; transform: translateX(-50%); }
@@ -226,24 +229,24 @@ const faqs = [
       .product-link:hover { box-shadow: 4px 4px 0 var(--ink); transform: translate(-2px, -2px); }
 
       .proof { position: relative; overflow: hidden; padding: 116px 0 110px; background: var(--ink); color: white; }
-      .proof::before { position: absolute; top: -180px; right: -80px; width: 520px; height: 520px; border: 1px solid rgba(255,240,0,.3); border-radius: 50%; box-shadow: 0 0 0 55px rgba(255,240,0,.06), 0 0 0 110px rgba(255,240,0,.04); content: ""; }
-      .proof .eyebrow { color: var(--yellow); }
+      .proof::before { position: absolute; top: -180px; right: -80px; width: 520px; height: 520px; border: 1px solid rgba(13,80,229,.42); border-radius: 50%; box-shadow: 0 0 0 55px rgba(13,80,229,.12), 0 0 0 110px rgba(13,80,229,.06); content: ""; }
+      .proof .eyebrow { color: var(--light-blue); }
       .proof .section-title { max-width: 720px; }
       .proof-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 80px; }
       .proof-card { min-height: 250px; padding: 28px; border-radius: 16px; color: var(--ink); }
-      .proof-card:nth-child(1) { background: linear-gradient(145deg, #c6e0a0, #a9d468); }
-      .proof-card:nth-child(2) { background: linear-gradient(145deg, #fff000, #ffd600); }
-      .proof-card:nth-child(3) { background: linear-gradient(145deg, #85b6e2, #6d9fd0); }
+      .proof-card:nth-child(1) { background: linear-gradient(145deg, #dbe7ff, #b9ceff); color: var(--dark-blue); }
+      .proof-card:nth-child(2) { background: linear-gradient(145deg, var(--light-blue), #0a43be); color: #fff; }
+      .proof-card:nth-child(3) { background: linear-gradient(145deg, var(--medium-blue), var(--dark-blue)); color: #fff; }
       .proof-value { display: block; margin-bottom: 18px; font-size: clamp(48px, 6vw, 86px); font-weight: 850; line-height: .95; letter-spacing: -0.08em; }
       .proof-card p { max-width: 230px; margin: 0; font-size: 16px; font-weight: 800; line-height: 1.45; letter-spacing: -0.05em; }
 
       .switchon { position: relative; overflow: hidden; padding: 140px 0; background: white; text-align: center; }
-      .switchon::before { position: absolute; top: 50%; left: 50%; width: 690px; height: 690px; border: 1px solid rgba(23,23,23,.08); border-radius: 50%; box-shadow: 0 0 0 70px rgba(23,23,23,.025), 0 0 0 150px rgba(23,23,23,.018); content: ""; transform: translate(-50%, -50%); }
+      .switchon::before { position: absolute; top: 50%; left: 50%; width: 690px; height: 690px; border: 1px solid rgba(0,0,90,.1); border-radius: 50%; box-shadow: 0 0 0 70px rgba(0,0,90,.035), 0 0 0 150px rgba(0,0,90,.02); content: ""; transform: translate(-50%, -50%); }
       .switchon-content { position: relative; z-index: 1; }
       .switchon .section-title { font-size: clamp(54px, 10vw, 130px); font-weight: 850; line-height: .92; }
-      .switch-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 13px 18px; border: 1px solid rgba(23,23,23,.2); border-radius: 999px; background: rgba(255,240,0,.55); font-size: 16px; font-weight: 800; }
-      .toggle { width: 42px; height: 24px; padding: 3px; border-radius: 999px; background: var(--ink); text-align: left; }
-      .toggle::before { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--yellow); content: ""; }
+      .switch-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 13px 18px; border: 1px solid rgba(13,80,229,.28); border-radius: 999px; background: rgba(13,80,229,.1); font-size: 16px; font-weight: 800; }
+      .toggle { width: 42px; height: 24px; padding: 3px; border-radius: 999px; background: var(--dark-blue); text-align: left; }
+      .toggle::before { display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--light-blue); content: ""; }
       .switchon-copy { max-width: 550px; margin: 28px auto 0; color: #555; font-size: 18px; line-height: 1.65; letter-spacing: -0.04em; }
 
       .partners { overflow: hidden; padding: 102px 0 92px; background: linear-gradient(#fff, #f4f4f4); }
@@ -275,7 +278,7 @@ const faqs = [
       .faq-item[open] summary::after { content: "−"; }
       .faq-item p { max-width: 720px; margin: -4px 40px 24px 0; color: #555; font-size: 16px; line-height: 1.7; letter-spacing: -0.04em; }
 
-      .contact { padding: 108px 0 120px; background: var(--yellow); }
+      .contact { padding: 108px 0 120px; background: var(--light-blue); color: #fff; }
       .contact-grid { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
       .contact .section-title { max-width: 730px; }
       .contact-copy { max-width: 360px; margin: 0; font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.05em; }
@@ -284,8 +287,8 @@ const faqs = [
 
       .site-footer { padding: 55px 0 32px; background: var(--ink); color: white; }
       .footer-top { display: flex; align-items: start; justify-content: space-between; gap: 40px; padding-bottom: 62px; }
-      .footer-brand { color: var(--yellow); }
-      .footer-brand .brand-mark { background: var(--yellow); color: var(--ink); }
+      .footer-brand { color: var(--light-blue); }
+      .footer-brand .brand-mark { background: var(--light-blue); color: var(--dark-blue); }
       .footer-columns { display: grid; grid-template-columns: repeat(3, minmax(100px, 1fr)); gap: 70px; }
       .footer-column strong { display: block; margin-bottom: 14px; color: #818181; font-size: 12px; letter-spacing: .02em; }
       .footer-column a, .footer-column p { display: block; margin: 0 0 8px; font-size: 14px; font-weight: 700; letter-spacing: -0.03em; }
@@ -299,7 +302,7 @@ const faqs = [
         .site-nav { gap: 10px; }
         .brand { font-size: 16px; }
         .brand-mark { width: 26px; height: 26px; }
-        .nav-links { position: absolute; top: 62px; right: 0; left: 0; display: none; flex-direction: column; gap: 0; padding: 8px; border-radius: 12px; background: rgba(255,240,0,.96); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+        .nav-links { position: absolute; top: 62px; right: 0; left: 0; display: none; flex-direction: column; gap: 0; padding: 8px; border-radius: 12px; background: rgba(13,80,229,.98); color: #fff; box-shadow: 0 12px 30px rgba(0,0,90,.2); }
         .nav-links.open { display: flex; }
         .nav-links a { padding: 13px 10px; }
         .nav-links a::after { bottom: 8px; left: 10px; }
@@ -356,7 +359,7 @@ const faqs = [
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <header class="site-header">
       <nav class="site-nav" aria-label="주요 메뉴">
-        <a class="brand" href="#hero" aria-label="블룸에이아이 홈"><span class="brand-mark">B·</span><span>BLUMN AI</span></a>
+        <a class="brand" href="#hero" aria-label="Kairos 홈"><span class="brand-mark">K·</span><span>KAIROS</span></a>
         <div class="nav-links" id="nav-links">
           <a href="#about">회사소개</a>
           <a href="#products">제품</a>
@@ -372,29 +375,29 @@ const faqs = [
       <section id="hero" class="hero" aria-labelledby="hero-title">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">AI FOR BETTER COMMUNICATION</p>
-            <h1 id="hero-title" class="hero-title">더 나은 고객 경험을<br /><em>AI</em>로 만듭니다</h1>
-            <p class="hero-subtitle">채팅상담부터 전화상담, CRM과 마케팅까지<br />고객 커뮤니케이션의 모든 여정을 하나로.</p>
+            <p class="eyebrow">KAIROS — THE OPPORTUNE MOMENT</p>
+            <h1 id="hero-title" class="hero-title">가장 중요한 순간을<br /><em>더 선명하게</em> 만듭니다</h1>
+            <p class="hero-subtitle">디자인, 기술, 전략이 만나는 순간<br />더 나은 다음 장면을 설계합니다.</p>
             <div class="hero-actions">
-              <a class="button-yellow" href="#contact">블룸에이아이 시작하기 <span aria-hidden="true">↗</span></a>
+              <a class="button-yellow" href="#contact">Kairos 시작하기 <span aria-hidden="true">↗</span></a>
               <a class="button-dark" href="#products">제품 둘러보기</a>
             </div>
-            <p class="hero-note">30,000+ 기업이 함께하는 고객 커뮤니케이션 플랫폼</p>
+            <p class="hero-note">모든 가능성이 만나는 순간, Kairos</p>
           </div>
           <div class="hero-art" aria-hidden="true">
             <div class="hero-glow"></div>
             <div class="orbit"></div>
             <div class="ai-window">
-              <div class="window-top"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="window-title">AI 상담 에이전트</span></div>
+              <div class="window-top"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="window-title">KAIROS / LIVE SYSTEM</span></div>
               <div class="chat-body">
-                <span class="chat-label">오늘도 24시간 연결 중</span>
+                <span class="chat-label">THE RIGHT MOMENT</span>
                 <div class="chat-message user">보험 점검하고 싶어요.<br />암이랑 치료비 쪽이고요.</div>
-                <div class="chat-message">안녕하세요, 고객님. 상담사 연결 전까지 도와드릴 AI 상담사입니다. 필요한 내용을 말씀해 주세요.</div>
+                <div class="chat-message">안녕하세요. 지금 필요한 다음 단계를 함께 찾아드릴게요. 무엇을 만들고 계신가요?</div>
                 <div class="chat-input"><span>메시지를 입력하세요</span><span class="send-icon">↑</span></div>
               </div>
             </div>
-            <div class="float-card one"><span>AI</span> 고객 의도 분석 완료</div>
-            <div class="float-card two"><span>↗</span> 상담 품질 97%+</div>
+            <div class="float-card one"><span>K</span> MOMENT FOUND</div>
+            <div class="float-card two"><span>↗</span> NEXT STEP READY</div>
           </div>
         </div>
         <a class="scroll-cue" href="#about">SCROLL</a>
@@ -453,10 +456,10 @@ const faqs = [
 
       <section id="faq" class="faq" aria-labelledby="faq-title"><div class="wrap faq-layout"><div class="faq-intro"><p class="eyebrow">FAQ</p><h2 id="faq-title" class="section-title">자주 묻는<br />질문</h2><p>서비스 정보부터 도입 방법까지, 궁금한 내용을 모았습니다. 더 궁금한 사항은 언제든 문의해 주세요.</p></div><div class="faq-list">{faqs.map(([question, answer]) => <details class="faq-item"><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 
-      <section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">LET'S TALK</p><h2 id="contact-title" class="section-title">블룸에이아이와 함께<br />커뮤니케이션의 미래를<br />만들어보세요.</h2></div><div><p class="contact-copy">고객사의 니즈에 맞는 솔루션을 제안해 드립니다. 빠르고 친절한 상담으로 여러분의 성공을 지원하겠습니다.</p><a class="contact-button" href="mailto:help@blumn.ai">도입 문의하기 <span aria-hidden="true">↗</span></a></div></div></section>
+      <section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">LET'S TALK</p><h2 id="contact-title" class="section-title">Kairos와 함께<br />가능성이 열리는 순간을<br />만들어보세요.</h2></div><div><p class="contact-copy">지금 만들고 있는 것과 다음에 필요한 것을 들려주세요. Kairos가 가장 좋은 다음 장면을 함께 설계하겠습니다.</p><a class="contact-button" href="mailto:hello@kairos.com">이야기 시작하기 <span aria-hidden="true">↗</span></a></div></div></section>
     </main>
 
-    <footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="brand footer-brand" href="#hero"><span class="brand-mark">B·</span><span>BLUMN AI</span></a><div class="footer-columns"><div class="footer-column"><strong>CONTACT</strong><p>help@blumn.ai</p><p>1666-5263</p></div><div class="footer-column"><strong>BUSINESS</strong><p>csm@blumn.ai</p><p>1644-4998</p></div><div class="footer-column"><strong>OFFICE</strong><p>서울특별시 중구<br />서소문로 89 순화빌딩 6층</p></div></div></div><div class="footer-bottom"><span>© Blumn AI. All rights reserved.</span><span>개인정보처리방침 · 이용약관</span></div></div></footer>
+    <footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="brand footer-brand" href="#hero"><span class="brand-mark">K·</span><span>KAIROS</span></a><div class="footer-columns"><div class="footer-column"><strong>CONTACT</strong><p>hello@kairos.com</p></div><div class="footer-column"><strong>EXPLORE</strong><p><a href="#about">About Kairos</a></p><p><a href="#stories">Stories</a></p></div><div class="footer-column"><strong>PHILOSOPHY</strong><p>Right time.<br />Right next step.</p></div></div></div><div class="footer-bottom"><span>© Kairos. All rights reserved.</span><span>Privacy · Terms</span></div></div></footer>
 
     <script>
       const menuButton = document.querySelector('.menu-button');
